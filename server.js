@@ -16,4 +16,4 @@ app.use(express.json());
 
 app.use("/api", apiRouter);
 
-app.listen(3000, () => console.log("server started"));
+app.listen(process.env.PORT || 80, () => console.log("server started"));
