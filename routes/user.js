@@ -12,7 +12,11 @@ router.post('/',async(req,res)=> {
     const newuser = new user({
         username:req.body.username,
         password:req.body.password,
-        avatar:req.body.avatar
+        avatar:req.body.avatar,
+        skills: req.body.skills,
+        description:req.body.description,
+        socialhandles: req.body.socialhandles,
+        posts: req.body.posts
     });
     newuser.save()
         .catch(err=>console.log(err))
