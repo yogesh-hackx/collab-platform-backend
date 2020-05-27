@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -20,4 +18,4 @@ app.use(express.json());
 app.use("/api", apiRouter);
 app.use("/api/user",userapi);
 
-app.listen(3000, () => console.log("server sarted"));
+app.listen(process.env.PORT || 3000, () => console.log("server started"));
