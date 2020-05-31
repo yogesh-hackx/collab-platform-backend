@@ -13,9 +13,15 @@ const UserSchema = new mongoose.Schema(
             required: true,
             select: false,
         },
-        avatar: String,
+        avatar: {
+            type: String,
+            default: "",
+        },
         skills: [String],
-        description: String,
+        description: {
+            type: String,
+            default: "",
+        },
         socialhandles: [String],
         posts: {
             created: [mongoose.ObjectId],
