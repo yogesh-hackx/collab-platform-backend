@@ -17,7 +17,7 @@ router.post("/", async (req, res) => {
             .status(422)
             .send(`User already exists with username ${username}`);
 
-    // if new user, hashing pass, and creating user
+    // if new user, hashing pass,and creating user
     const hash = await bcrypt.hash(password, 10);
     const newuser = await new User({
         username,
