@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const apiRouter = require("./routes/api");
 const userapi = require("./routes/user");
+require('dotenv').config()
 
 mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
@@ -18,4 +19,4 @@ app.use(express.json());
 app.use("/api", apiRouter);
 app.use("/api/user",userapi);
 
-app.listen(process.env.PORT || 80, () => console.log("server started"));
+app.listen(process.env.PORT || 3000, () => console.log("server started"));
