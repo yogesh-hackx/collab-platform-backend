@@ -1,7 +1,7 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const { String } = mongoose.Schema.Types;
 
-const UserSchema = new mongoose.Schema(
+const userSchema = new mongoose.Schema(
     {
         username: {
             type: String,
@@ -15,12 +15,12 @@ const UserSchema = new mongoose.Schema(
         },
         avatar: {
             type: String,
-            default: "",
+            default: '',
         },
         skills: [String],
         description: {
             type: String,
-            default: "",
+            default: '',
         },
         socialhandles: [String],
         posts: {
@@ -30,9 +30,9 @@ const UserSchema = new mongoose.Schema(
     },
     {
         timestamps: true,
-    }
+    },
 );
 
-const User = mongoose.model("user", UserSchema);
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;
