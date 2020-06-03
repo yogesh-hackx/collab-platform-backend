@@ -5,7 +5,6 @@ const apiRouter = require('./routes/api');
 const userApi = require('./routes/user');
 const signUpApi = require('./routes/signup');
 const postApi = require('./routes/posts');
-require('dotenv').config();
 
 mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
