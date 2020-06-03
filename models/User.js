@@ -1,7 +1,7 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const { String } = mongoose.Schema.Types;
 
-const UserSchema = new mongoose.Schema(
+const userSchema = new mongoose.Schema(
     {
         username: {
             type: String,
@@ -13,9 +13,15 @@ const UserSchema = new mongoose.Schema(
             required: true,
             select: false,
         },
-        avatar: String,
+        avatar: {
+            type: String,
+            default: '',
+        },
         skills: [String],
-        description: String,
+        description: {
+            type: String,
+            default: '',
+        },
         socialhandles: [String],
         posts: {
             created: [mongoose.ObjectId],
@@ -24,9 +30,9 @@ const UserSchema = new mongoose.Schema(
     },
     {
         timestamps: true,
-    }
+    },
 );
 
-const User = mongoose.model("user", UserSchema);
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;
